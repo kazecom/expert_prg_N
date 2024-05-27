@@ -4,8 +4,7 @@ const dateInput = document.getElementById('date');
 const submitButton = document.getElementById('submit');
 const resultDivision = document.getElementById('result-area');
 
-// 数で重みづけ
-const fortuneList = ["大吉","大吉","大吉", "大吉", "大吉", "吉", "吉", "吉","中吉","中吉","小吉","小吉","凶"];
+const fortuneList = ["大吉", "大吉", "吉", "吉", "吉","中吉","中吉","小吉","凶","凶"];
 
 submitButton.addEventListener(
   'click',
@@ -22,15 +21,12 @@ submitButton.addEventListener(
       return;
     }
 
-    // 診断結果表示エリアの作成
     resultDivision.innerText = '';
     
-    // headerDivision の作成
     const headerDivision = document.createElement('div');
     headerDivision.setAttribute('class', 'card-header text-bg-light');
     headerDivision.innerText = '結果';
 
-    // bodyDivision の作成
     const bodyDivision = document.createElement('div');
     bodyDivision.setAttribute('class', 'card-body');
 
@@ -42,10 +38,8 @@ submitButton.addEventListener(
     paragraph.innerText = result;
     bodyDivision.appendChild(paragraph);
 
-    // resultDivision に Bootstrap のスタイルを適用する
     resultDivision.setAttribute('class', 'card');
 
-    // headerDivision と bodyDivision を resultDivision に差し込む
     resultDivision.appendChild(headerDivision);
     resultDivision.appendChild(bodyDivision);
   }
